@@ -10,4 +10,5 @@ version          '0.1.0'
   supports platform
 end
 
+depends 'erlang', '>= 0.9'
 depends 'rabbitmq', '~>3.7.0'
