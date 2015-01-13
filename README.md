@@ -24,9 +24,11 @@ events.
 
 ## Attributes
 
-| Key                                      |  Type  | Description                                                       | Default    |
-|:-----------------------------------------|:------:|:------------------------------------------------------------------|:-----------|
-| `['rabbitmq']['opsworks']['layer_name']` | String | OpsWorks stack's layer shortname that contains RabbitMQ instances | `rabbitmq` |
+| Key                                           |  Type  | Description                                                       | Default       |
+|:----------------------------------------------|:------:|:------------------------------------------------------------------|:--------------|
+| `['rabbitmq']['opsworks']['dns_type']`        | String | Specifies whether to use `/etc/hosts` file or AWS Route53 DNS API | `"hostsfile"` |
+| `['rabbitmq']['opsworks']['layer_name']`      | String | OpsWorks stack's layer shortname that contains RabbitMQ instances | `"rabbitmq"`  |
+| `['rabbitmq']['opsworks']['route53_zone_id']` | String | AWS Route53 hosted zone ID                                        | `nil`         |
 
 ## Recipes
 
@@ -64,6 +66,19 @@ clustering setup in `opsworks_rabbitmq::configure`.
 Because the list of nodes needs to be updated when a layer instance goes online
 or shuts down, this recipe must run during **Configure** lifecycle event in
 your layer instances.
+
+### opsworks_rabbitmq::dns
+
+Sets up the DNS lookups for node discovery within a cluster. If
+`node['rabbitmq']['opsworks']['dns_type']` is set to `route53`, it will attempt
+to use AWS Route53 API on your DNS hosted zone specified by
+`node['rabbitmq']['opsworks']['route53_zone_id']` attribute. However, if the
+DNS type is not set to `route53`, then this recipe will create a local hosts
+file on `/etc/hosts` on each instance such that short hostname of each node in
+the layer resolves to each instance's private IP.
+
+Because the recipe needs an up-to-date list of running instances, it needs to
+run during the **Configure** lifecycle event in your layer instances.
 
 ## License
 
