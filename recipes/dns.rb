@@ -35,7 +35,7 @@ when 'route53'
     name      node[:opsworks][:instance][:hostname]
     value     node[:opsworks][:instance][:private_ip]
     type      "A"
-    zone_id   node['rabbit_mq']['opsworks']['route53_zone_id']
+    zone_id   node['rabbitmq']['opsworks']['route53_zone_id']
     overwrite true
     action    :create
   end
