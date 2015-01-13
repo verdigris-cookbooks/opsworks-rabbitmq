@@ -11,4 +11,5 @@ version          '0.1.0'
 end
 
 depends 'erlang', '>= 0.9'
-depends 'rabbitmq', '~>3.7'
+depends 'rabbitmq', '~> 3.7'
+depends 'route53', '~> 0.3'
