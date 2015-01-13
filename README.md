@@ -40,8 +40,8 @@ Sets up directory permissions and generate configuration files from templates.
 If clustering is enabled, it will also run `opsworks_rabbitmq::cluster` recipe.
 
 Configure your stack layer to run `opsworks_rabbitmq::configure` during
-**Configure** lifecycle event in your layer instances. See below for more
-information on why.
+**Configure** lifecycle event in your layer instances. See [below](#opsworks_rabbitmqcluster)
+for more information on why.
 
 > **NOTE:** When clustering is *disabled*, it should not matter whether this
 recipe is configured to run during **Setup** or **Configure** lifecycle event
@@ -56,3 +56,9 @@ clustering setup in `opsworks_rabbitmq::configure`.
 Because the list of nodes needs to be updated when a layer instance goes online
 or shuts down, this recipe must run during **Configure** lifecycle event in
 your layer instances.
+
+## License
+
+This cookbook is license and distributed under the Simplified BSD license.
+See [LICENSE](https://github.com/verdigris-cookbooks/opsworks-rabbitmq/blob/master/LICENSE)
+for more details.
