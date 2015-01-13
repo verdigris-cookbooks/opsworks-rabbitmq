@@ -11,6 +11,14 @@ events.
 
 ## Requirements
 
+### Platforms
+
+* Amazon Linux
+* Ubuntu 12.04 LTS
+* Ubuntu 14.04 LTS
+
+### Cookbooks
+
 * **erlang** (≥ 0.9)
 * **rabbitmq** (≥ 3.7)
 
