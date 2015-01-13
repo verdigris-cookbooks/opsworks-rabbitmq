@@ -82,6 +82,6 @@ run during the **Configure** lifecycle event in your layer instances.
 
 ## License
 
-This cookbook is license and distributed under the Simplified BSD license.
+This cookbook is licensed and distributed under the Simplified BSD license.
 See [LICENSE](https://github.com/verdigris-cookbooks/opsworks-rabbitmq/blob/master/LICENSE)
 for more details.
