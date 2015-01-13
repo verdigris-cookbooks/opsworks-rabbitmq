@@ -27,6 +27,10 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+class Chef::Resource # rubocop:disable all
+  include Opscode::RabbitMQ # rubocop:enable all
+end
+
 if node['rabbitmq']['logdir']
   directory node['rabbitmq']['logdir'] do
     owner 'rabbitmq'
@@ -60,7 +64,7 @@ template "#{node['rabbitmq']['config']}.config" do
   group 'root'
   mode 00644
   variables(
-  :kernel => format_kernel_parameters
+    :kernel => format_kernel_parameters
   )
   notifies :restart, "service[#{node['rabbitmq']['service_name']}]", :immediately
 end
