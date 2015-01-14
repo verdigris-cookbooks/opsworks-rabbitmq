@@ -7,7 +7,8 @@ support for automatic clustering from layer instances.
 The recipes included in this cookbook is based on the recipes provided by
 the community [rabbitmq cookbook](https://github.com/jjasghar/rabbitmq) with
 modifications which provide better recipe granularity for AWS OpsWorks lifecycle
-events.
+events. For all intents and purposes, it is very similar to the original
+cookbook.
 
 ## Requirements
 
