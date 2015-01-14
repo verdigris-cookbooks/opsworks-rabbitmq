@@ -31,6 +31,28 @@ class Chef::Resource # rubocop:disable all
   include Opscode::RabbitMQ # rubocop:enable all
 end
 
+# Placeholder service (TODO: Fix in Chef 12)
+case node['platform_family']
+when 'debian'
+  if node['rabbitmq']['job_control'] == 'upstart'
+    service node['rabbitmq']['service_name'] do
+      provider Chef::Provider::Service::Upstart
+      action :nothing
+    end
+  end
+
+  if node['rabbitmq']['job_control'] == 'initd'
+    service node['rabbitmq']['service_name'] do
+      supports :status => true, :restart => true
+      action :nothing
+    end
+  end
+when 'rhel', 'fedora', 'suse', 'smartos'
+  service node['rabbitmq']['service_name'] do
+    action :nothing
+  end
+end
+
 if node['rabbitmq']['logdir']
   directory node['rabbitmq']['logdir'] do
     owner 'rabbitmq'
