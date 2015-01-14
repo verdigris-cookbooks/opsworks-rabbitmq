@@ -1,5 +1,7 @@
 # opsworks_rabbitmq
 
+[![Build Status](https://travis-ci.org/verdigris-cookbooks/opsworks-rabbitmq.svg)](https://travis-ci.org/verdigris-cookbooks/opsworks-rabbitmq)
+
 This is a wrapper cookbook which utilizes the [rabbitmq cookbook](https://github.com/jjasghar/rabbitmq)
 for installing [RabbitMQ](https://www.rabbitmq.com/) on AWS OpsWorks with
 support for automatic clustering from layer instances.
