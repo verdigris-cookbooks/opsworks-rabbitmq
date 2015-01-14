@@ -27,7 +27,7 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-includes_recipe 'opsworks_rabbitmq::configure'
+include_recipe 'opsworks_rabbitmq::configure'
 
 node['rabbitmq']['policies'].each do |name, policy|
   rabbitmq_policy name do
