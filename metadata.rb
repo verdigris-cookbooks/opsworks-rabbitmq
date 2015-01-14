@@ -10,7 +10,5 @@ version          '0.2.1'
   supports platform
 end
 
-depends 'erlang', '>= 0.9'
+depends 'erlang', '=> 0.9'
 depends 'rabbitmq', '~> 3.7'
-depends 'route53', '~> 0.3'
-depends 'hostsfile', '~> 2.4'
