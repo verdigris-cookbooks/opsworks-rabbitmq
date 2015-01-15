@@ -23,9 +23,9 @@ describe 'opsworks_rabbitmq::install' do
     expect(chef_run.node['rabbitmq']['use_distro_version']).to eq(false)
   end
 
-  it 'should install the erlang package' do
-    expect(chef_run).to install_package('erlang')
-  end
+  # it 'should install the erlang package' do
+  #   expect(chef_run).to install_package('erlang')
+  # end
 
   context 'suse' do
     let(:runner) { ChefSpec::ServerRunner.new(SUSE_OPTS) }
