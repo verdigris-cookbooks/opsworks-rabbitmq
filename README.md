@@ -68,6 +68,33 @@ Because the list of nodes needs to be updated when a layer instance goes online
 or shuts down, this recipe must run during **Configure** lifecycle event in
 your layer instances.
 
+### opsworks_rabbitmq::policy_management
+
+Enables any policies listed in the `node['rabbitmq'][policies]` and disables any
+listed in `node['rabbitmq'][disabled_policies]` attributes.
+
+This recipe should be used to set up [High Availability queues](https://www.rabbitmq.com/ha.html)
+in RabbitMQ.
+
+**Example Custom JSON:**
+
+```json
+{
+  "rabbitmq": {
+    "policies": {
+      "ha-all-queues": {
+        "pattern": ".*",
+        "params": { "ha-mode": "all" },
+        "priority": 0
+      }
+    }
+  }
+}
+```
+
+This recipe may be executed any time after `opsworks_rabbitmq::install` recipe.
+It will automatically execute `opsworks_rabbitmq::configure` recipe if it has
+not run before.
 
 ## License
 
