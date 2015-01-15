@@ -96,6 +96,16 @@ This recipe may be executed any time after `opsworks_rabbitmq::install` recipe.
 It will automatically execute `opsworks_rabbitmq::configure` recipe if it has
 not run before.
 
+### opsworks_rabbitmq::user_management
+
+Enables any users listed in the `node['rabbitmq']['enabled_users]` and disables
+any listed in `node['rabbitmq'][disabled_users]` attributes.
+
+### opsworks_rabbitmq::virtualhost_management
+
+Enables any vhosts listed in the `node['rabbitmq'][virtualhosts]` and disables
+any listed in `node['rabbitmq'][disabled_virtualhosts]` attributes.
+
 ## License
 
 This cookbook is licensed and distributed under the Simplified BSD license.
