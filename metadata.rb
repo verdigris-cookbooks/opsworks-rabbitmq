@@ -11,4 +11,4 @@ version          '0.3.0'
 end
 
 depends 'erlang', '>= 0.9'
-depends 'rabbitmq', '~> 3.7'
+depends 'rabbitmq', '~> 2.4'
