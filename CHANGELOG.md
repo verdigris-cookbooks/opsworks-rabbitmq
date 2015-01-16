@@ -1,3 +1,9 @@
+# v0.3
+
+* Added `opsworks_rabbitmq::user_management` for user management
+* Added `opsworks_rabbitmq::virtualhost_management` for vhost management
+* ChefSpec unit tests for the above recipes
+
 # v0.2.1
 
 * Added `opsworks_rabbitmq::policy_management` needed for setting up High
