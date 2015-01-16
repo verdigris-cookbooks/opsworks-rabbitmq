@@ -1,3 +1,8 @@
+# v0.3.1
+
+* Revert [rabbitmq](https://github.com/jjasghar/rabbitmq) cookbook version down
+  to ~2.4 due to incompatibility issues with Chef 11.10 on AWS OpsWorks
+
 # v0.3
 
 * Added `opsworks_rabbitmq::user_management` for user management
